@@ -1,4 +1,5 @@
 import 'package:coffee_store_ui/pages/landing_page.dart';
+import 'package:coffee_store_ui/pages/shop_page.dart';
 import 'package:coffee_store_ui/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -34,6 +35,10 @@ Route<dynamic> _onGenerateRoute(RouteSettings settings) {
     case "/":
       return MaterialPageRoute(builder: (BuildContext context) {
         return LandingPage();
+      });
+    case "/shop":
+      return MaterialPageRoute(builder: (BuildContext context) {
+        return ShopPage();
       });
     default:
       return MaterialPageRoute(builder: (BuildContext context) {

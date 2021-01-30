@@ -1,4 +1,5 @@
 import 'package:coffee_store_ui/utils/constants.dart';
+import 'package:coffee_store_ui/utils/helpers.dart';
 import 'package:flutter/material.dart';
 
 class LandingPage extends StatelessWidget {
@@ -68,7 +69,9 @@ class LandingPage extends StatelessWidget {
                       height: 48.0,
                       child: FlatButton(
                         padding: EdgeInsets.symmetric(horizontal: 32.0),
-                        onPressed: () {},
+                        onPressed: () {
+                          nextScreen(context, "/shop");
+                        },
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(28.0),
                         ),
