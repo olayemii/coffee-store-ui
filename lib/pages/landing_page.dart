@@ -40,8 +40,11 @@ class LandingPage extends StatelessWidget {
                 height: MediaQuery.of(context).size.height,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  // mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    SizedBox(
+                      height: 200.0,
+                    ),
                     Text(
                       "Shop Best\nCoffee In\nTown",
                       style: TextStyle(
@@ -53,14 +56,26 @@ class LandingPage extends StatelessWidget {
                     ),
                     SizedBox(height: 8.0),
                     Text(
-                      "Shop Best\nCoffee In\nTown",
+                      "Experience the best taste of coffee with us exclusively",
                       style: TextStyle(
-                        fontSize: 34.0,
-                        height: 1.3,
-                        color: kTextColor1,
-                        fontWeight: FontWeight.w700,
+                        fontSize: 18.0,
+                        height: 1.8,
+                        color: Colors.white,
                       ),
                     ),
+                    SizedBox(height: 20.0),
+                    Container(
+                      height: 48.0,
+                      child: FlatButton(
+                        padding: EdgeInsets.symmetric(horizontal: 32.0),
+                        onPressed: () {},
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(28.0),
+                        ),
+                        child: Text("Shop Now"),
+                        color: kTextColor1,
+                      ),
+                    )
                   ],
                 ),
               ),
