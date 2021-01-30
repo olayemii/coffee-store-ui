@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           scaffoldBackgroundColor: kFadedScaffoldColor,
           visualDensity: VisualDensity.adaptivePlatformDensity,
-          textTheme: GoogleFonts.poppinsTextTheme(),
+          textTheme: GoogleFonts.robotoMonoTextTheme(),
         ),
         initialRoute: "/",
         onGenerateRoute: _onGenerateRoute,
