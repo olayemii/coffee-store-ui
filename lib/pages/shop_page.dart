@@ -49,10 +49,28 @@ class ShopPage extends StatelessWidget {
                         Icon(
                           FlutterIcons.keyboard_backspace_mdi,
                         ),
-                        Badge(Icon(
-                          FlutterIcons.bag_sli,
-                        )),
+                        Badge(
+                          position: BadgePosition.bottomStart(
+                            bottom: -12.0,
+                          ),
+                          badgeContent: Text(
+                            "3",
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                          badgeColor: kPrimaryColor,
+                          child: Icon(
+                            FlutterIcons.shopping_cart_fea,
+                          ),
+                        ),
                       ],
+                    ),
+                    SizedBox(
+                      height: 30.0,
+                    ),
+                    Text(
+                      "Shop",
                     )
                   ],
                 ),
