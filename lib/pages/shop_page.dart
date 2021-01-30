@@ -42,6 +42,7 @@ class ShopPage extends StatelessWidget {
                   vertical: 20.0,
                 ),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -52,6 +53,7 @@ class ShopPage extends StatelessWidget {
                         Badge(
                           position: BadgePosition.bottomStart(
                             bottom: -12.0,
+                            start: -2.0,
                           ),
                           badgeContent: Text(
                             "3",
@@ -71,6 +73,20 @@ class ShopPage extends StatelessWidget {
                     ),
                     Text(
                       "Shop",
+                      style: TextStyle(
+                        color: kPrimaryColor,
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    ListView.separated(
+                      itemBuilder: (BuildContext context, int index) {},
+                      separatorBuilder: (BuildContext context, int index) {
+                        return SizedBox(
+                          width: 15.0,
+                        );
+                      },
+                      itemCount: null,
                     )
                   ],
                 ),
