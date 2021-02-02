@@ -2,8 +2,9 @@
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/olayemii/flutter-ui-kits?style=social) ![GitHub watchers](https://img.shields.io/github/watchers/olayemii/flutter-ui-kits?style=social) ![GitHub followers](https://img.shields.io/github/followers/olayemii?style=social) ![GitHub](https://img.shields.io/github/license/olayemii/flutter-ui-kits)
 
-Free Flutter UI Kits based on designs on UpLabs 💓.
-Repo will be updated daily with new beautiful UI Kits.
+Free Flutter UI Kits based on designs on UpLabs 💓. (https://www.youtube.com/watch?v=iDgFwzmO1SU)[Watch Youtube Speedcode Here]
+
+
 
 Complete flutter projects are available on my <a href="https://codecanyon.net/user/chris2code/portfolio">Codecanyon.net Page</a>
 
