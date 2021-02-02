@@ -8,10 +8,10 @@ class Coffee {
   final ImageProvider image;
 
   Coffee({
-    this.id,
-    this.description,
-    this.price,
-    this.image,
     this.name,
+    this.description,
+    this.id,
+    this.image,
+    this.price,
   });
 }

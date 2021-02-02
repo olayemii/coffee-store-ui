@@ -1,11 +1,10 @@
 import 'package:badges/badges.dart';
 import 'package:coffee_store_ui/utils/constants.dart';
 import 'package:coffee_store_ui/utils/static_data.dart';
-import 'package:coffee_store_ui/widgets/product_grid.dart';
+import 'package:coffee_store_ui/widgets/coffee_listing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class ShopPage extends StatefulWidget {
   @override
@@ -13,12 +12,9 @@ class ShopPage extends StatefulWidget {
 }
 
 class _ShopPageState extends State<ShopPage> {
-  int activeIndex = 0;
-  List<Widget> pages = [
-    ProductGrid(),
-    Container(),
-    ProductGrid(),
-  ];
+  // Keep track of active tab
+  int _activeTab = 0;
+  List<Widget> pages = [CoffeeListing(), SizedBox(), CoffeeListing()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,11 +40,11 @@ class _ShopPageState extends State<ShopPage> {
               ),
             ),
             Positioned(
-              left: -70.0,
-              bottom: -40.0,
               child: Image.asset(
                 "assets/images/drum.png",
               ),
+              left: -70.0,
+              bottom: -40.0,
             ),
             SafeArea(
               child: SingleChildScrollView(
@@ -66,7 +62,7 @@ class _ShopPageState extends State<ShopPage> {
                         children: [
                           GestureDetector(
                             onTap: () {
-                              Navigator.of(context).pop();
+                              Navigator.pop(context);
                             },
                             child: Icon(
                               FlutterIcons.keyboard_backspace_mdi,
@@ -74,9 +70,7 @@ class _ShopPageState extends State<ShopPage> {
                           ),
                           Badge(
                             position: BadgePosition.bottomStart(
-                              bottom: -5.0,
-                              start: 4.0,
-                            ),
+                                bottom: -5.0, start: 4.0),
                             badgeContent: Text(
                               "3",
                               style: TextStyle(
@@ -88,7 +82,7 @@ class _ShopPageState extends State<ShopPage> {
                               "assets/images/shopping_bag.png",
                               width: 45.0,
                             ),
-                          ),
+                          )
                         ],
                       ),
                       SizedBox(
@@ -108,33 +102,37 @@ class _ShopPageState extends State<ShopPage> {
                         child: ListView.separated(
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
-                          physics: BouncingScrollPhysics(),
+                          // Let's create a model for categories and populate with data.
                           itemBuilder: (BuildContext context, int index) {
                             return InkWell(
                               onTap: () {
                                 setState(() {
-                                  activeIndex = index;
+                                  _activeTab = index;
                                 });
                               },
+                              // Little switch animation
                               child: AnimatedContainer(
                                 duration: Duration(milliseconds: 450),
-                                curve: Curves.easeIn,
-                                padding: EdgeInsets.symmetric(horizontal: 20.0),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 20.0,
+                                ),
                                 height: ScreenUtil().setHeight(48.0),
                                 decoration: BoxDecoration(
-                                  color: activeIndex == index
+                                  color: _activeTab == index
                                       ? kTextColor1
-                                      : kTextColor1.withOpacity(.2),
+                                      : kTextColor1.withOpacity(
+                                          .2,
+                                        ),
                                   borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 child: Center(
                                   child: Text(
                                     StaticData.categories[index].name,
                                     style: TextStyle(
-                                      color: activeIndex == index
+                                      fontWeight: FontWeight.bold,
+                                      color: _activeTab == index
                                           ? Colors.white
                                           : kTextColor1,
-                                      fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                 ),
@@ -152,11 +150,12 @@ class _ShopPageState extends State<ShopPage> {
                       SizedBox(
                         height: 20.0,
                       ),
+                      // Lets make a dummy page switch
                       AnimatedSwitcher(
                         duration: Duration(
                           milliseconds: 450,
                         ),
-                        child: pages[activeIndex],
+                        child: pages[_activeTab],
                       )
                     ],
                   ),

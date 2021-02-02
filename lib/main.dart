@@ -45,7 +45,6 @@ Route<dynamic> _onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (BuildContext context) {
         return SingleProduct();
       });
-
     default:
       return MaterialPageRoute(builder: (BuildContext context) {
         return LandingPage();

@@ -1,6 +1,7 @@
 import 'package:coffee_store_ui/utils/constants.dart';
-import 'package:coffee_store_ui/utils/helpers.dart';
+import 'package:coffee_store_ui/utils/helper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/screenutil.dart';
 
 class LandingPage extends StatelessWidget {
   @override
@@ -41,7 +42,6 @@ class LandingPage extends StatelessWidget {
                 height: MediaQuery.of(context).size.height,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  // mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
                       height: 200.0,
@@ -55,7 +55,9 @@ class LandingPage extends StatelessWidget {
                         fontWeight: FontWeight.w700,
                       ),
                     ),
-                    SizedBox(height: 8.0),
+                    SizedBox(
+                      height: 8.0,
+                    ),
                     Text(
                       "Experience the best taste of coffee with us exclusively",
                       style: TextStyle(
@@ -64,9 +66,11 @@ class LandingPage extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    SizedBox(height: 20.0),
+                    SizedBox(
+                      height: 20.0,
+                    ),
                     Container(
-                      height: 48.0,
+                      height: ScreenUtil().setHeight(48.0),
                       child: FlatButton(
                         padding: EdgeInsets.symmetric(horizontal: 32.0),
                         onPressed: () {
